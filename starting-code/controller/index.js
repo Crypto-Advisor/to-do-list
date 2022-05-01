@@ -36,14 +36,14 @@ exports.read = async(req, res) =>{
     }
 }
 
-exports.removeToDo = async(req, res) =>{
+exports.removeTodo = async(req, res) =>{
     const id = Number(req.params.id);
     try{
         await remove(id);
         return res.status(200).send({data: id});
     } catch(error){
         return res.status(400).json({
-            error
+            error,
         });
     }
 }
